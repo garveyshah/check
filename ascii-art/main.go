@@ -24,8 +24,10 @@ func main() {
 		fmt.Println()
 		return
 	}
-
-	fmt.Printf("%q\n", os.Args[1])
+	if len(os.Args) > 2 {
+		return
+	}
+	// fmt.Printf("%q\n", os.Args[1])
 
 	// split the command-line argument
 	lines := strings.Split(string(os.Args[1]), "\\n")
