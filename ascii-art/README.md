@@ -12,6 +12,7 @@
 
 + Below is a representation of an ASCII character
 
+``
 @@@@@@BB@@@@``^^``^^``@@BB$$@@BB$$
 @@%%$$$$^^^^WW&&8888&&^^""BBBB@@@@
 @@@@@@""WW8888&&WW888888WW``@@@@$$
@@ -29,6 +30,7 @@ $$``&&WW88&&88&&&&8888&&88WW88``$$
 @@@@@@^^888888&&88&&&&MM88^^BB$$$$
 @@@@@@BB````&&&&&&&&88""``BB@@BB$$
 $$@@$$$$$$$$``````````@@$$@@$$$$$$
+``
 
 
 + This project handles an input with numbers, letters, spaces, special characters and \n(new-lines).
