@@ -13,7 +13,7 @@
 
 + Ascii-art is a program which consists in receiving a string as an argument and outputting the string in a graphic representation using ASCII. It's Time to Write Big.
 
-+ You can use [shadow](https://learn.zone01kisumu.ke/git/root/public/src/branch/master/subjects/ascii-art/shadow.txt) ascii-art, [standard](https://learn.zone01kisumu.ke/git/root/public/src/branch/master/subjects/ascii-art/standard.txt) ascii-art or [thinkertoy](https://learn.zone01kisumu.ke/git/root/public/src/branch/master/subjects/ascii-art/thinkertoy.txt) ascii-art to print out the commandline arguments.
++ You can use [shadow](https://learn.zone01kisumu.ke/git/root/public/src/branch/master/subjects/ascii-art/shadow.txt) ascii-art, [standard](https://learn.zone01kisumu.ke/git/root/public/src/branch/master/subjects/ascii-art/standard.txt) ascii-art, or [thinkertoy](https://learn.zone01kisumu.ke/git/root/public/src/branch/master/subjects/ascii-art/thinkertoy.txt) ascii-art to print out the commandline arguments.
 
 ## Usage
 
@@ -38,6 +38,7 @@ man ascii
 ## BANNER FORMAT *
 
 >> Each character has a height of 8 lines
+
 >> Characters are separated by a newline (\n)
 
 
@@ -102,6 +103,12 @@ func main() {
 		}
 	}
 }
+
+
+---
+---
+
+
 
 ```
 
