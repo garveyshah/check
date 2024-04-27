@@ -26,6 +26,13 @@ go run . "example"
 
 + This project handles an input with numbers, letters, spaces, special characters and \n(new-lines).
 
+* To know the range of ASCII characters, you can enter the following command in your terminal
+
+```bash
+man ascii
+```
+* man is short for manual. The command above will display a manual for ASCII characters when it runs.
+
 + The ASCII characters considered in this case range from ASCII character index 32 to index 126
 
 ## BANNER FORMAT *
@@ -37,7 +44,7 @@ go run . "example"
 ## Script
 
 ```
-    package main
+package main
 
 import (
 	"fmt"
