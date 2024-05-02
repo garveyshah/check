@@ -12,6 +12,11 @@ import (
 func main() {
 	// read the txt file
 	file, err := os.ReadFile("standard.txt")
+	//deal with the file being empty
+	// if len(file)-1 != 856 {
+	// 	fmt.Println("error in file length")
+	// 	return
+	// }
 
 	if err != nil {
 		fmt.Println("Error reading file", err)
@@ -34,16 +39,16 @@ func main() {
 		if arg == string("") {
 			return
 		}
-		if arg ==("\n") {
+		if arg == ("\n") {
 			fmt.Println()
 			return
 		}
-	// split the txt file
-	lineSlc := strings.Split(string(file), "\n")
+		// split the txt file
+		lineSlc := strings.Split(string(file), "\n")
 
-	// output := ascii.printArguments(lineSlc)
+		// output := ascii.printArguments(lineSlc)
 
-	// print ASCII-art
-	printarguments.PrintArguments(lineSlc, args)
-}
+		// print ASCII-art
+		printarguments.PrintArguments(lineSlc, args)
+	}
 }

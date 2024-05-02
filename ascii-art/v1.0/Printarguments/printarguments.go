@@ -8,12 +8,30 @@ import (
 func PrintArguments(lineSlc []string, args []string) {
 	for _, arg := range args {
 		// deal with empty values and newlines
-		if arg == string("") {
+		if arg == "" {
 			continue
 		}
-		if arg == string("\n") {
+		if arg == "\\n" {
 			fmt.Println()
 			return
+		}
+
+		// deal with whitespaces
+		whitespaces := []string{"\\t", "\\v", "\\f", "\\r", "\\x20"}
+		for _, char := range whitespaces {
+			if arg == char {
+				fmt.Println("error: non-printable ascii values")
+				return
+			}
+		}
+
+		// deal with escape sequences
+		escapeSequence := []string{"\\a", "\\b", "\\", "\""}
+		for _, char := range escapeSequence {
+			if arg == char {
+				fmt.Println("error: escape sequence characters")
+				return
+			}
 		}
 
 		// split the command-line argument
