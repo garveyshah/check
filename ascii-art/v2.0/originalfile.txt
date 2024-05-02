@@ -1,0 +1,83 @@
+// i have three files for my ascii program, that is supposed to read an ascii art file, commandline arguments and print out a correspending ascii art for the commandline input and deal with all possible errors
+// This is the main.go file.... package main
+
+// import (
+// 	ascii "ascii/functions"
+// 	"fmt"
+// 	"os"
+// )
+
+// func main() {
+// 	args := ascii.checkArguments()
+// 	input := os.Args[1:]
+
+// 	output := ascii.printArguments(input)
+
+// 	fmt.Println(output)
+// }
+// This is the printarguments.go file... package ascii
+
+// import (
+// 	"fmt"
+// 	"os"
+// 	"strings"
+// )
+
+// func printArguments(input []string) string {
+// 	file, err := os.ReadFile("standard.txt")
+// 	if err != nil {
+// 		fmt.Println("Error: Error Reading File", err)
+// 		os.Exit(0)
+// 	}
+
+// 	inputStrings := strings.Split(string(file), "\n")
+
+// 	// strings.Builder type, which can be used to efficiently
+// 	// and easily build or concatenate strings.
+// 	var output strings.Builder
+
+// 	// argument := strings.Split(args, "\\n")
+// 	for _, i := range input {
+// 		if i == "" {
+// 			fmt.Println()
+// 		} else {
+// 			for j := 0; j < 8; j++ {
+// 				for _, chr := range i {
+// 					startAt := int(chr-32)*9 + 1
+// 					fmt.Print(inputStrings[startAt+j])
+// 				}
+// 				fmt.Println()
+// 			}
+// 		}
+// 	}
+// 	return output.String()
+// }
+// This is the checkarguments.go file... package ascii
+
+// import (
+// 	"fmt"
+// 	"os"
+// )
+
+// func checkArguments() {
+// 	if len(os.Args) != 2 {
+// 		fmt.Println("The length of argument has not been met")
+// 	}
+
+// 	args := os.Args[1]
+// 	for _, chrs := range args {
+// 		if chrs < 32 || chrs > 126 {
+// 			fmt.Println("Error Non Printable Character", err)
+// 			os.Exit(0)
+// 		}
+// 	}
+
+// 	if args == "" {
+// 		return
+// 	}
+
+// 	if args == "\n" {
+// 		fmt.Println()
+// 	}
+// }
+// Deal with all the errors and rewrite functional files and a main_test.go file to test the functionality of the code. Use the same format and don't deviate. Write explanatory comments for the files.

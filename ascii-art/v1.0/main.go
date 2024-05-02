@@ -2,48 +2,48 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"strings"
+
+	printarguments "asciiart/Printarguments"
 )
 
 func main() {
 	// read the txt file
 	file, err := os.ReadFile("standard.txt")
+
 	if err != nil {
 		fmt.Println("Error reading file", err)
+		os.Exit(0)
 	}
-
-	// split the txt file
-	lineSlc := strings.Split(string(file), "\n")
-
-	// deal with empty values and newlines
-	if os.Args[1] == "" {
-		return
-	}
-	if os.Args[1] == "\n" {
-		fmt.Println()
-		return
-	}
-	if len(os.Args) > 2 {
-		return
-	}
-	// fmt.Printf("%q\n", os.Args[1])
-
-	// split the command-line argument
-	lines := strings.Split(string(os.Args[1]), "\\n")
-	for _, value := range lines {
-		// print newline for empty value
-		if value == "" {
-			fmt.Println()
-		} else {
-			for i := 0; i < 8; i++ {
-				for _, letter := range value {
-					startIndex := int(letter-32)*9 + 1
-					fmt.Print(lineSlc[startIndex+i])
-
-				}
-				fmt.Println()
+	args := os.Args[1:]
+	for _, arg := range args {
+		for _, chr := range arg {
+			if chr < 32 || chr > 126 {
+				log.Fatal("Error : Non ascii/printable characters found")
+				os.Exit(1)
 			}
 		}
 	}
+	if len(os.Args) < 2 {
+		fmt.Println("Error : insufficient arguments")
+	}
+	for _, arg := range args {
+		// deal with empty values and newlines
+		if arg == string("") {
+			return
+		}
+		if arg ==("\n") {
+			fmt.Println()
+			return
+		}
+	// split the txt file
+	lineSlc := strings.Split(string(file), "\n")
+
+	// output := ascii.printArguments(lineSlc)
+
+	// print ASCII-art
+	printarguments.PrintArguments(lineSlc, args)
+}
 }
